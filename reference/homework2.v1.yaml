@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: homework2
+  version: '1.0'
+  contact:
+    name: dmitriy prikhodko
+    url: 'http://test.com'
+    email: dmitriy.prikhodko@sigma.software
+  description: REST WEB API Design test project
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /users:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+      operationId: get-users
+      description: Get all users
+components:
+  schemas:
+    User:
+      title: User
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        surName:
+          type: string
+        middleName:
+          type: string
+      required:
+        - name
